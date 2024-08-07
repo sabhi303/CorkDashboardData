@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"b39a8728394c44e3877124ce1d42d18f","collectionName":"queries-geodemos-group-description","type":"collection"}
