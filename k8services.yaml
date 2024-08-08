@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: liveservice
+  labels:
+    app: liveservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: liveservice
+  template:
+    metadata:
+      labels:
+        app: liveservice
+    spec:
+      hostNetwork: false
+      containers:
+      - name: liveservice-container
+        image: docker.io/library/corkdashboardliveservice:1.0
+        imagePullPolicy: Never
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        env:
+        - name: MONGODB_URL
+          value: "mongodb://mongodb:27017/"
+        - name: DB_NAME
+          value: "CorkDashboard"
