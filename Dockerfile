@@ -13,5 +13,8 @@ COPY entrypoint.sh /entrypoint.sh
 # Make the entrypoint script executable
 RUN chmod +x /entrypoint.sh
 
+# Expose MongoDB port
+EXPOSE 27017
+
 # Run the entrypoint script
 CMD ["/entrypoint.sh"]
